@@ -4,7 +4,6 @@ import './Browserfreelancer.css';
 const BrowserFreelancer = () => {
     return (
         <div className="browser-page mesh-gradient text-white">
-            {/* Navbar */}
             <nav className="navbar navbar-expand-md glass-nav sticky-top px-4 py-3">
                 <div className="container-fluid">
                     <div className="d-flex align-items-center gap-3">
