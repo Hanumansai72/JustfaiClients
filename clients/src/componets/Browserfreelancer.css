@@ -1,0 +1,261 @@
+/* ===== Browse Freelancers Page Custom Styles ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+:root {
+    --primary: #8b5cf6;
+    --accent: #a78bfa;
+    --bg-dark: #030305;
+    --card-dark: #0f0f18;
+    --text-secondary: #a1a1aa;
+}
+
+body {
+    background-color: var(--bg-dark) !important;
+    color: #fff !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Page Background */
+.browser-page {
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    position: relative;
+    overflow-x: hidden;
+}
+
+.mesh-gradient {
+    background-color: var(--bg-dark);
+    background-image:
+        radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(15, 15, 24, 0.4) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(167, 139, 250, 0.08) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(3, 3, 5, 0.3) 0px, transparent 50%);
+    background-attachment: fixed;
+}
+
+/* Navbar */
+.glass-nav {
+    background: rgba(3, 3, 5, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-link-custom {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding-bottom: 0.25rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+    color: var(--primary);
+}
+
+.nav-link-custom.active {
+    border-bottom: 2px solid var(--primary);
+}
+
+/* Buttons */
+.glow-btn {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.glow-btn:hover {
+    background-color: #7c3aed;
+    /* darker primary */
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+    transform: translateY(-1px);
+    color: white;
+}
+
+.btn-quick-hire {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s;
+}
+
+.btn-quick-hire:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Cards */
+.ai-glow-card {
+    background-color: var(--card-dark);
+    box-shadow: 0 0 30px rgba(167, 139, 250, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.ai-glow-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 40px rgba(167, 139, 250, 0.2);
+}
+
+.ai-badge-glow {
+    box-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+    background-color: var(--accent);
+    color: var(--bg-dark);
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.25rem 0.75rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* Tags & Badges */
+.skill-tag {
+    background: rgba(139, 92, 246, 0.05);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    color: var(--text-secondary);
+    font-size: 0.625rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.skill-tag:hover {
+    border-color: var(--primary);
+    background: rgba(139, 92, 246, 0.1);
+    color: #fff;
+}
+
+.trust-badge {
+    background-color: rgba(139, 92, 246, 0.2);
+    color: var(--accent);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Glass Panel (List View) */
+.glass-panel {
+    background: rgba(15, 15, 24, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.list-item-hover:hover {
+    background-color: rgba(139, 92, 246, 0.04);
+}
+
+.list-item-hover {
+    border-left: 4px solid transparent;
+    transition: all 0.3s;
+}
+
+.list-item-hover:hover {
+    border-left-color: var(--primary);
+}
+
+/* Inputs */
+.search-input {
+    background-color: var(--card-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+}
+
+.search-input:focus {
+    background-color: var(--card-dark);
+    border-color: var(--primary);
+    color: #fff;
+    box-shadow: none;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    pointer-events: none;
+}
+
+/* Background Blurs */
+.bg-blur-1 {
+    position: fixed;
+    top: 25%;
+    right: -5rem;
+    width: 24rem;
+    height: 24rem;
+    background-color: rgba(139, 92, 246, 0.1);
+    filter: blur(100px);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.bg-blur-2 {
+    position: fixed;
+    bottom: 25%;
+    left: -5rem;
+    width: 24rem;
+    height: 24rem;
+    background-color: rgba(167, 139, 250, 0.05);
+    filter: blur(120px);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Utilities */
+.text-accent {
+    color: var(--accent);
+}
+
+.text-secondary-custom {
+    color: var(--text-secondary);
+}
+
+.border-white-5 {
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.bg-white-5 {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Avatar */
+.avatar-lg {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+}
+
+.avatar-md {
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+}

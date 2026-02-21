@@ -1,0 +1,227 @@
+/* ===== Dashboard Custom Styles ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap');
+
+:root {
+    --primary: #520a8e;
+    --accent: #8b5cf6;
+    --bg-dark: #030305;
+    --bg-sidebar: #0a0a0c;
+    --card-border: rgba(139, 92, 246, 0.15);
+    --text-slate-400: #94a3b8;
+    --text-slate-500: #64748b;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    /* Prevent body scroll, handle in main */
+}
+
+/* Layout */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 5rem;
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid rgba(82, 10, 142, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex-shrink: 0;
+}
+
+.sidebar-link {
+    padding: 0.75rem;
+    color: var(--text-slate-500);
+    border-radius: 0.75rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    color: var(--accent);
+}
+
+.sidebar-link.active {
+    background-color: rgba(82, 10, 142, 0.2);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background-color: var(--bg-dark);
+}
+
+/* Header */
+.dashboard-header {
+    background-color: var(--primary);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    z-index: 10;
+}
+
+/* Buttons */
+.btn-translucent {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.3s;
+}
+
+.btn-translucent:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    color: white;
+    font-weight: 700;
+    font-size: 0.875rem;
+    box-shadow: 0 10px 15px -3px rgba(82, 10, 142, 0.4);
+    transition: all 0.3s;
+    border: none;
+}
+
+.btn-accent:hover {
+    background-color: #7c3aed;
+    /* slightly lighter/different shade */
+    filter: brightness(1.1);
+    color: white;
+}
+
+/* Glass Cards */
+.glass-card {
+    background: rgba(82, 10, 142, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 0.75rem;
+}
+
+.glass-card-hover:hover {
+    border-color: rgba(139, 92, 246, 0.4);
+}
+
+/* Stats Icons */
+.icon-box {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box-primary {
+    background-color: rgba(82, 10, 142, 0.2);
+    color: var(--accent);
+}
+
+.icon-box-amber {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.icon-box-blue {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+}
+
+.icon-box-emerald {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #34d399;
+}
+
+/* Progress Bars */
+.progress-container {
+    width: 100%;
+    height: 0.5rem;
+    background-color: rgba(82, 10, 142, 0.2);
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.progress-bar-custom {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 1s ease-in-out;
+}
+
+.bg-accent {
+    background-color: var(--accent);
+}
+
+.bg-primary-custom {
+    background-color: var(--primary);
+}
+
+.bg-emerald {
+    background-color: #10b981;
+}
+
+/* Text Utilities */
+.text-accent {
+    color: var(--accent) !important;
+}
+
+.text-slate-400 {
+    color: var(--text-slate-400) !important;
+}
+
+.text-slate-500 {
+    color: var(--text-slate-500) !important;
+}
+
+.text-emerald {
+    color: #10b981 !important;
+}
+
+/* Project Hubs */
+.project-hub {
+    background-color: var(--bg-sidebar);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.project-hub:hover {
+    border-color: var(--accent);
+}
+
+/* Scrollbar Hide */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
