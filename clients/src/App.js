@@ -1,10 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./componets/Login";
-import Signup from "./componets/Signup";
-import BrowserFreelancer from "./componets/Browserfreelancer";
-import Dashboard from "./componets/Dashboard";
-import Workspace from "./componets/workspace";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import BrowserFreelancer from "./pages/Browserfreelancer";
+import Dashboard from "./pages/Dashboard";
+import Workspace from "./pages/workspace";
+import Proposal from "./pages/propsoal";
+import Aiassistance from "./pages/Aiassistance";
+import Postproject from "./pages/Postproject";
+import Comparepropoal from "./pages/comparepropoal";
+import Wallet from "./pages/Wallet";
 
 function App() {
   return (
@@ -15,6 +20,11 @@ function App() {
         <Route path="/browse" element={<BrowserFreelancer />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/workspace" element={<Workspace />} />
+        <Route path="/proposal" element={<Proposal />} />
+        <Route path="/ai-assistant" element={<Aiassistance />} />
+        <Route path="/post-project" element={<Postproject />} />
+        <Route path="/compare-proposals" element={<Comparepropoal />} />
+        <Route path="/wallet" element={<Wallet />} />
       </Routes>
     </Router>
   );
