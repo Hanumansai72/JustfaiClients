@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './comparepropoal.css';
 
 const APPLICANTS = [
@@ -51,9 +51,7 @@ const APPLICANTS = [
 const badgeVariant = (i) => i === 0 ? 'active' : i === 1 ? 'medium' : 'inactive';
 
 const Comparepropoal = () => {
-    const [selected, setSelected] = useState([0, 1]); // indices of compared pair
-
-    const shownCandidates = selected.map(i => APPLICANTS[i]);
+    const selected = [0, 1]; // indices of compared pair
 
     return (
         <div className="cp-shell">

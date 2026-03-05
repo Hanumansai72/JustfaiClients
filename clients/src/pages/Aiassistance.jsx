@@ -193,7 +193,7 @@ const Aiassistance = () => {
                                 <div className="scope-code__watermark">
                                     <span className="material-icons">code</span>
                                 </div>
-                                <p className="scope-code__comment">// Project: FinTech High-Performance Mobile App</p>
+                                <p className="scope-code__comment">{'// Project: FinTech High-Performance Mobile App'}</p>
                                 <p className="scope-code__objective">
                                     <em>Objective:</em> Develop a secure, low-latency cross-platform application for real-time asset tracking and transaction management.
                                 </p>

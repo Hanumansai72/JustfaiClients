@@ -158,13 +158,13 @@ const Proposal = () => {
 
                 <nav className="p-sidebar__nav">
                     {[
-                        { icon: 'dashboard', label: 'Dashboard' },
-                        { icon: 'add_circle_outline', label: 'Post Project' },
-                        { icon: 'description', label: 'Proposals', badge: '12', active: true },
-                        { icon: 'chat_bubble_outline', label: 'Messages' },
-                        { icon: 'analytics', label: 'Reports' },
-                    ].map(({ icon, label, badge, active }) => (
-                        <a key={label} href="#" className={`p-nav-link${active ? ' p-nav-link--active' : ''}`}>
+                        { icon: 'dashboard', label: 'Dashboard', href: '/dashboard' },
+                        { icon: 'add_circle_outline', label: 'Post Project', href: '/post-project' },
+                        { icon: 'description', label: 'Proposals', badge: '12', active: true, href: '/proposal' },
+                        { icon: 'chat_bubble_outline', label: 'Messages', href: '/messages' },
+                        { icon: 'analytics', label: 'Reports', href: '/reports' },
+                    ].map(({ icon, label, badge, active, href }) => (
+                        <a key={label} href={href} className={`p-nav-link${active ? ' p-nav-link--active' : ''}`}>
                             <span className="material-icons">{icon}</span>
                             <span>{label}</span>
                             {badge && <span className="p-nav-link__badge">{badge}</span>}
