@@ -75,7 +75,7 @@ const Wallet = () => {
                 <div className="escrow-card">
                     <div className="section-header">
                         <h2>Active Escrow Contracts</h2>
-                        <a href="#">View all contracts</a>
+                        <a href="/">View all contracts</a>
                     </div>
                     <div className="contracts-list">
                         {CONTRACTS.map((c, i) => (
@@ -95,7 +95,7 @@ const Wallet = () => {
                                         <div className="contract-item__bar-fill" style={{ width: `${c.pct}%` }} />
                                     </div>
                                     <span className="contract-item__pct">{c.pct}%</span>
-                                    <a href="#" className="contract-item__view">
+                                    <a href="/" className="contract-item__view">
                                         View <span className="material-icons">arrow_forward</span>
                                     </a>
                                 </div>
@@ -211,7 +211,7 @@ const Wallet = () => {
                                         </span>
                                     </td>
                                     <td className="text-right">
-                                        <a href="#" className="tx-hash-link">
+                                        <a href="/" className="tx-hash-link">
                                             <span>{tx.hash}</span>
                                             <span className="material-icons">open_in_new</span>
                                         </a>

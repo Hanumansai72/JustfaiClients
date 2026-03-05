@@ -65,10 +65,10 @@ const Comparepropoal = () => {
                         <h2>AI Marketplace</h2>
                     </div>
                     <nav className="cp-nav__links">
-                        <a href="#">Dashboard</a>
-                        <a href="#" className="active">Projects</a>
-                        <a href="#">Messages</a>
-                        <a href="#">Talent</a>
+                        <a href="/">Dashboard</a>
+                        <a href="/" className="active">Projects</a>
+                        <a href="/">Messages</a>
+                        <a href="/">Talent</a>
                     </nav>
                 </div>
                 <div className="cp-nav__right">
