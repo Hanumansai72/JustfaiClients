@@ -51,7 +51,7 @@ const APPLICANTS = [
 const badgeVariant = (i) => i === 0 ? 'active' : i === 1 ? 'medium' : 'inactive';
 
 const Comparepropoal = () => {
-    const selected = [0, 1]; // indices of compared pair
+
 
     return (
         <div className="cp-shell">
