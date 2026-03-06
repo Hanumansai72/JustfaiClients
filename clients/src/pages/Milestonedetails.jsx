@@ -1,5 +1,6 @@
 import React from 'react';
 import './Milestonedetails.css';
+import Footer from '../components/Footer';
 
 const files = [
     { icon: 'description', name: 'logo_primary.svg', type: 'Vector Graphic • 1.2MB' },
@@ -260,21 +261,7 @@ const Milestonedetails = () => {
                 </div>
             </main>
 
-            {/* Footer */}
-            <footer className="msd-footer">
-                <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
-                    <div className="d-flex align-items-center gap-2" style={{ color: '#94a3b8' }}>
-                        <span className="material-symbols-outlined">rocket_launch</span>
-                        <span className="fw-bold" style={{ fontSize: '0.875rem', letterSpacing: '-0.025em' }}>JustFAI © 2023</span>
-                    </div>
-                    <div className="d-flex gap-4">
-                        <a className="msd-footer-link" href="/">Audit Policy</a>
-                        <a className="msd-footer-link" href="/">Legal Terms</a>
-                        <a className="msd-footer-link" href="/">Dispute Center</a>
-                        <a className="msd-footer-link" href="/">Help Desk</a>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };

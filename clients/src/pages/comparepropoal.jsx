@@ -1,5 +1,6 @@
 import React from 'react';
 import './comparepropoal.css';
+import Footer from '../components/Footer';
 
 const APPLICANTS = [
     {
@@ -270,6 +271,7 @@ const Comparepropoal = () => {
                     </div>
                 </section>
             </main>
+            <Footer />
         </div>
     );
 };

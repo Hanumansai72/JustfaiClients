@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Postproject.css';
+import Footer from '../components/Footer';
 
 /* ── Static data ── */
 const STEPS = ['Title & Category', 'Description', 'Milestones', 'Review'];
@@ -530,6 +531,7 @@ const Postproject = () => {
                         </div>
                     )}
                 </footer>
+                <Footer />
 
             </div>
 

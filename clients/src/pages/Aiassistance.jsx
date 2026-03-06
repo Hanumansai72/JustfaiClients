@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Aiassistance.css';
+import Footer from '../components/Footer';
 
 /* ── Talent data ── */
 const talents = [
@@ -285,25 +286,7 @@ const Aiassistance = () => {
                 </div>
             </main>
 
-            {/* ── Footer ── */}
-            <footer className="ai-footer">
-                <div className="ai-footer__inner">
-                    <div className="ai-footer__brand">
-                        <div className="ai-footer__logo">
-                            <span className="material-icons">auto_awesome</span>
-                        </div>
-                        <span className="ai-footer__title">
-                            GENESIS<span className="text-primary">AI</span>
-                        </span>
-                    </div>
-                    <p className="ai-footer__copy">© 2024 Genesis AI Marketplace. Powered by Advanced Neural Logic.</p>
-                    <div className="ai-footer__links">
-                        <a href="/dashboard">API Docs</a>
-                        <a href="/dashboard">Privacy</a>
-                        <a href="/dashboard">Support</a>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </>
     );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Milestone.css';
+import Footer from '../components/Footer';
 
 const Milestone = () => {
     const [paymentReleased, setPaymentReleased] = useState(false);
@@ -323,6 +324,7 @@ const Milestone = () => {
                     </div>
                 </aside>
             </main>
+            <Footer />
         </div>
     );
 };

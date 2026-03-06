@@ -1,5 +1,6 @@
 import React from 'react';
 import './Browserfreelancer.css';
+import Footer from '../components/Footer';
 
 const BrowserFreelancer = () => {
     return (
@@ -297,9 +298,9 @@ const BrowserFreelancer = () => {
                 </div>
             </main>
 
-            {/* Background Blurs */}
             <div className="bg-blur-1"></div>
             <div className="bg-blur-2"></div>
+            <Footer />
         </div>
     );
 };

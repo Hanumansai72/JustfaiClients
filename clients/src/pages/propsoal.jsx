@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Proposal.css';
+import Footer from '../components/Footer';
 
 /* ─── AI Match Score Circle ─── */
 const MatchCircle = ({ percent }) => {
@@ -301,6 +302,7 @@ const Proposal = () => {
                 </div>
             </aside>
 
+            <Footer />
         </div>
     );
 };

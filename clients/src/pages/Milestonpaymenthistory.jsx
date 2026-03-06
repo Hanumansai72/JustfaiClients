@@ -1,5 +1,6 @@
 import React from 'react';
 import './Milestonpaymenthistory.css';
+import Footer from '../components/Footer';
 
 const milestones = [
     {
@@ -216,6 +217,7 @@ const Milestonpaymenthistory = () => {
                     </div>
                 </aside>
             </main>
+            <Footer />
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Wallet.css';
+import Footer from '../components/Footer';
 
 const CONTRACTS = [
     { title: 'AI Neural Network Optimizer', client: 'Cyberdyne Systems', amount: '$2,500.00', pct: 75 },
@@ -233,6 +234,7 @@ const Wallet = () => {
                 </div>
             </div>
 
+            <Footer />
         </div>
     );
 };
