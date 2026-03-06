@@ -143,19 +143,19 @@ const Milestone = () => {
                     <div>
                         <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Submitted Assets</h3>
                         <nav className="flex flex-col gap-1">
-                            <a className="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary font-medium text-decoration-none" href="#">
+                            <a className="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary font-medium text-decoration-none" href="/">
                                 <span className="material-symbols-outlined text-sm">folder_open</span>
                                 <span className="text-sm">Source Code</span>
                             </a>
-                            <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover-bg-white-5 text-slate-400 transition-colors text-decoration-none" href="#">
+                            <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover-bg-white-5 text-slate-400 transition-colors text-decoration-none" href="/">
                                 <span className="material-symbols-outlined text-sm">palette</span>
                                 <span className="text-sm">Design System</span>
                             </a>
-                            <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover-bg-white-5 text-slate-400 transition-colors text-decoration-none" href="#">
+                            <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover-bg-white-5 text-slate-400 transition-colors text-decoration-none" href="/">
                                 <span className="material-symbols-outlined text-sm">description</span>
                                 <span className="text-sm">Documentation</span>
                             </a>
-                            <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover-bg-white-5 text-slate-400 transition-colors text-decoration-none" href="#">
+                            <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover-bg-white-5 text-slate-400 transition-colors text-decoration-none" href="/">
                                 <span className="material-symbols-outlined text-sm">image</span>
                                 <span className="text-sm">Static Assets</span>
                             </a>
@@ -275,7 +275,7 @@ const Milestone = () => {
                         <div className="flex-1 overflow-y-auto p-4 space-y-6 flex-grow-1 d-flex flex-column gap-4">
                             <div className="space-y-2">
                                 <div className="flex items-center gap-2 mb-2 d-flex">
-                                    <img className="size-6 rounded-full" style={{ width: '1.5rem', height: '1.5rem' }} alt="Client profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATpBLj0SByQmllvolMlz-zq8jeT3IoHFuHTg9lMYMQDTpeIOHKBgaxmJioocrHNmabmHKj_9u1qiTdHmH1K0sStb5JGrRyx-hGfK9C2IPVY9Us5uREW52I-UkLF2QOqtp937Ldw2VnEYTKC4hXocY1k3F9il6To1vx49mAemiPlJRd5ByGoujuPejVIAeNUAwS_5MGqOgFGjrknkp0Dhb0RLswCNbR_0EpeQHNNzoJJ2xt08fL8kik7ppUs7oZ-sRUa3-9tDmBOHUB" />
+                                    <img className="size-6 rounded-full" style={{ width: '1.5rem', height: '1.5rem' }} alt="Client avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATpBLj0SByQmllvolMlz-zq8jeT3IoHFuHTg9lMYMQDTpeIOHKBgaxmJioocrHNmabmHKj_9u1qiTdHmH1K0sStb5JGrRyx-hGfK9C2IPVY9Us5uREW52I-UkLF2QOqtp937Ldw2VnEYTKC4hXocY1k3F9il6To1vx49mAemiPlJRd5ByGoujuPejVIAeNUAwS_5MGqOgFGjrknkp0Dhb0RLswCNbR_0EpeQHNNzoJJ2xt08fL8kik7ppUs7oZ-sRUa3-9tDmBOHUB" />
                                     <span className="text-xs font-bold">Sarah (Client)</span>
                                     <span className="text-[10px] text-slate-500" style={{ fontSize: '0.625rem' }}>2h ago</span>
                                 </div>

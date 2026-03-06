@@ -240,7 +240,7 @@ const Milestonedetails = () => {
                                 <p className="m-0 mb-3" style={{ fontSize: '0.75rem', color: '#94a3b8', lineHeight: 1.6 }}>
                                     All Intellectual Property (IP) rights for the deliverables associated with Milestone 1 have been legally transferred from the contributor to the client as of the timestamp of payment release.
                                 </p>
-                                <a className="fw-bold" href="#" style={{ fontSize: '0.75rem', color: 'var(--primary)', textDecoration: 'underline', textDecorationColor: 'rgba(137, 91, 245, 0.3)' }}>View Transfer Certificate</a>
+                                <a className="fw-bold" href="/" style={{ fontSize: '0.75rem', color: 'var(--primary)', textDecoration: 'underline', textDecorationColor: 'rgba(137, 91, 245, 0.3)' }}>View Transfer Certificate</a>
                             </div>
 
                             {/* Metadata */}
@@ -268,10 +268,10 @@ const Milestonedetails = () => {
                         <span className="fw-bold" style={{ fontSize: '0.875rem', letterSpacing: '-0.025em' }}>JustFAI © 2023</span>
                     </div>
                     <div className="d-flex gap-4">
-                        <a className="msd-footer-link" href="#">Audit Policy</a>
-                        <a className="msd-footer-link" href="#">Legal Terms</a>
-                        <a className="msd-footer-link" href="#">Dispute Center</a>
-                        <a className="msd-footer-link" href="#">Help Desk</a>
+                        <a className="msd-footer-link" href="/">Audit Policy</a>
+                        <a className="msd-footer-link" href="/">Legal Terms</a>
+                        <a className="msd-footer-link" href="/">Dispute Center</a>
+                        <a className="msd-footer-link" href="/">Help Desk</a>
                     </div>
                 </div>
             </footer>
