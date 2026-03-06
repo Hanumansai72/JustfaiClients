@@ -17,8 +17,6 @@ body {
     background-color: var(--bg-dark);
     color: #fff;
     font-family: 'Inter', sans-serif;
-    overflow: hidden;
-    /* Prevent body scroll */
 }
 
 /* Layout */
