@@ -83,10 +83,10 @@ const Aiassistance = () => {
 
                     {/* Nav links */}
                     <div className="ai-nav__links">
-                        <a href="/">Dashboard</a>
-                        <a href="/" className="nav-active">Hiring Center</a>
-                        <a href="/">Projects</a>
-                        <a href="/">Messages</a>
+                        <a href="/dashboard">Dashboard</a>
+                        <a href="/browse" className="nav-active">Hiring Center</a>
+                        <a href="/post-project">Projects</a>
+                        <a href="/workspace">Messages</a>
                     </div>
 
                     {/* Actions */}
@@ -159,7 +159,7 @@ const Aiassistance = () => {
                     <div>
                         <div className="talent-header">
                             <h2>Talent Shortlist</h2>
-                            <a href="/">View All Matches</a>
+                            <a href="/browse">View All Matches</a>
                         </div>
                         <div className="talent-list">
                             {talents.map((t, i) => <TalentCard key={i} {...t} />)}
@@ -298,9 +298,9 @@ const Aiassistance = () => {
                     </div>
                     <p className="ai-footer__copy">© 2024 Genesis AI Marketplace. Powered by Advanced Neural Logic.</p>
                     <div className="ai-footer__links">
-                        <a href="/">API Docs</a>
-                        <a href="/">Privacy</a>
-                        <a href="/">Support</a>
+                        <a href="/dashboard">API Docs</a>
+                        <a href="/dashboard">Privacy</a>
+                        <a href="/dashboard">Support</a>
                     </div>
                 </div>
             </footer>

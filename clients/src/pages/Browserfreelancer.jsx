@@ -17,9 +17,9 @@ const BrowserFreelancer = () => {
 
                     <div className="collapse navbar-collapse justify-content-center d-none d-md-block">
                         <div className="d-flex gap-4">
-                            <a href="/" className="nav-link-custom active">Browse Freelancers</a>
-                            <a href="/" className="nav-link-custom">My Projects</a>
-                            <a href="/" className="nav-link-custom">Finance</a>
+                            <a href="/browse" className="nav-link-custom active">Browse Freelancers</a>
+                            <a href="/post-project" className="nav-link-custom">My Projects</a>
+                            <a href="/wallet" className="nav-link-custom">Finance</a>
                         </div>
                     </div>
 

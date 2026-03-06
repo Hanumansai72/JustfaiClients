@@ -118,9 +118,9 @@ const Postproject = () => {
                         <h2 className="pp-nav__name">JustFAI</h2>
                     </div>
                     <div className="pp-nav__links">
-                        <a href="/">Find Work</a>
-                        <a href="/">Hire Talent</a>
-                        <a href="/">My Projects</a>
+                        <a href="/browse">Find Work</a>
+                        <a href="/ai-assistant">Hire Talent</a>
+                        <a href="/dashboard">My Projects</a>
                     </div>
                     <div className="pp-nav__actions">
                         <button className="pp-nav__profile-btn">Profile</button>
@@ -138,9 +138,9 @@ const Postproject = () => {
                         {/* Breadcrumb (step 4 only) */}
                         {currentStep === 3 && (
                             <div className="rl-breadcrumb">
-                                <a href="/">Projects</a>
-                                <span>/</span>
-                                <a href="/">New Project</a>
+                                <a href="/post-project">Projects</a>
+                                <div className="text-secondary-custom mx-2">/</div>
+                                <a href="/post-project">New Project</a>
                                 <span>/</span>
                                 <span className="rl-breadcrumb__active">Review &amp; Launch</span>
                             </div>
@@ -501,9 +501,9 @@ const Postproject = () => {
                                 <span>End-to-End Encrypted &amp; AI Audited</span>
                             </div>
                             <div className="rl-footer__links">
-                                <a href="/">Privacy Policy</a>
-                                <a href="/">Terms of Service</a>
-                                <a href="/">Developer API</a>
+                                <a href="/dashboard">Privacy Policy</a>
+                                <a href="/dashboard">Terms of Service</a>
+                                <a href="/dashboard">Developer API</a>
                             </div>
                             <div className="rl-footer__copy">© 2024 JustFAI Protocol</div>
                         </div>

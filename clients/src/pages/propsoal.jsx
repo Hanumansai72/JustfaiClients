@@ -161,8 +161,8 @@ const Proposal = () => {
                         { icon: 'dashboard', label: 'Dashboard', href: '/dashboard' },
                         { icon: 'add_circle_outline', label: 'Post Project', href: '/post-project' },
                         { icon: 'description', label: 'Proposals', badge: '12', active: true, href: '/proposal' },
-                        { icon: 'chat_bubble_outline', label: 'Messages', href: '/messages' },
-                        { icon: 'analytics', label: 'Reports', href: '/reports' },
+                        { icon: 'chat_bubble_outline', label: 'Messages', href: '/workspace' },
+                        { icon: 'analytics', label: 'Reports', href: '/dashboard' },
                     ].map(({ icon, label, badge, active, href }) => (
                         <a key={label} href={href} className={`p-nav-link${active ? ' p-nav-link--active' : ''}`}>
                             <span className="material-icons">{icon}</span>

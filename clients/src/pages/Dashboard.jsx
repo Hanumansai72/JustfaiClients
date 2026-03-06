@@ -12,24 +12,24 @@ const Dashboard = () => {
                     </div>
                 </div>
                 <nav className="d-flex flex-column gap-3 w-100 flex-grow-1 px-2">
-                    <a href="/" className="sidebar-link active" title="Dashboard">
-                        <span className="material-symbols-outlined">dashboard</span>
+                    <a href="/dashboard" className="sidebar-link active" title="Dashboard">
+                        <span className="material-icons">dashboard</span>
                     </a>
-                    <a href="/" className="sidebar-link" title="Projects">
-                        <span className="material-symbols-outlined">account_tree</span>
+                    <a href="/post-project" className="sidebar-link" title="Projects">
+                        <span className="material-icons">account_tree</span>
                     </a>
-                    <a href="/" className="sidebar-link" title="Payments">
-                        <span className="material-symbols-outlined">account_balance_wallet</span>
+                    <a href="/wallet" className="sidebar-link" title="Payments">
+                        <span className="material-icons">account_balance_wallet</span>
                     </a>
-                    <a href="/" className="sidebar-link" title="Messages">
-                        <span className="material-symbols-outlined">chat_bubble</span>
+                    <a href="/workspace" className="sidebar-link" title="Messages">
+                        <span className="material-icons">chat_bubble</span>
                     </a>
-                    <a href="/" className="sidebar-link" title="AI Analytics">
-                        <span className="material-symbols-outlined">query_stats</span>
+                    <a href="/ai-assistant" className="sidebar-link" title="AI Analytics">
+                        <span className="material-icons">query_stats</span>
                     </a>
                 </nav>
                 <div className="mt-auto d-flex flex-column gap-3 align-items-center mb-3">
-                    <a href="/" className="sidebar-link" title="Settings">
+                    <a href="/dashboard" className="sidebar-link" title="Settings">
                         <span className="material-symbols-outlined">settings</span>
                     </a>
                     <div className="rounded-circle border border-primary border-opacity-25 overflow-hidden" style={{ width: '2.5rem', height: '2.5rem' }}>

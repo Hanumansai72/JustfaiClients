@@ -1,0 +1,182 @@
+/* src/pages/Milestone.css */
+:root {
+    --primary: #8959f7;
+    --background-light: #f6f5f8;
+    --background-dark: #030305;
+    --card-dark: #0f0f18;
+    --border-dark: #1f1f2e;
+}
+
+.milestone-page {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-dark);
+    color: #f1f5f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Glass and Glow Effects */
+.glass-md {
+    background: rgba(15, 15, 24, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(137, 89, 247, 0.2);
+}
+
+.glass-lg {
+    background: rgba(15, 15, 24, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.glow-purple {
+    box-shadow: 0 0 15px rgba(137, 89, 247, 0.3);
+}
+
+.glow-purple-lg {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.25);
+}
+
+.glow-text {
+    text-shadow: 0 0 10px rgba(137, 89, 247, 0.5);
+}
+
+.glow-text-lg {
+    text-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+}
+
+/* Layout Wrappers */
+.milestone-header {
+    border-bottom: 1px solid var(--border-dark);
+    background-color: rgba(3, 3, 5, 0.8);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: 4rem;
+}
+
+.milestone-main {
+    flex: 1;
+    display: flex;
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.milestone-sidebar-left {
+    width: 250px;
+    border-right: 1px solid var(--border-dark);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex-shrink: 0;
+}
+
+.milestone-center {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    background-color: rgba(3, 3, 5, 0.5);
+}
+
+.milestone-sidebar-right {
+    width: 320px;
+    border-left: 1px solid var(--border-dark);
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(15, 15, 24, 0.3);
+}
+
+/* Payment Modal Backdrop */
+.payment-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.payment-modal-content {
+    position: relative;
+    z-index: 101;
+    width: 100%;
+    max-width: 42rem;
+}
+
+/* Animations */
+.particle {
+    position: absolute;
+    background: var(--primary);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.animate-ping {
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-bounce {
+    animation: bounce 1s infinite;
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes ping {
+
+    75%,
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+}
+
+/* Utility Hover Fixes */
+.hover-white:hover {
+    color: #fff !important;
+}
+
+.hover-bg-white-5:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff !important;
+}
+
+.hover-primary:hover {
+    color: var(--primary) !important;
+}

@@ -165,7 +165,7 @@ const Login = () => {
               {/* Sign Up Link */}
               <p className="mt-4 text-center text-secondary-custom mb-0" style={{ fontSize: '0.875rem' }}>
                 New to the platform?
-                <a className="link-primary-bold ms-1" href="#signup">Create Account</a>
+                <a className="link-primary-bold ms-1" href="/signup">Create Account</a>
               </p>
             </div>
           </div>

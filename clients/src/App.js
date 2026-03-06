@@ -10,6 +10,9 @@ import Aiassistance from "./pages/Aiassistance";
 import Postproject from "./pages/Postproject";
 import Comparepropoal from "./pages/comparepropoal";
 import Wallet from "./pages/Wallet";
+import Milestone from "./pages/Milestone";
+import Milestonpaymenthistory from "./pages/Milestonpaymenthistory";
+import Milestonedetails from "./pages/Milestonedetails";
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
         <Route path="/post-project" element={<Postproject />} />
         <Route path="/compare-proposals" element={<Comparepropoal />} />
         <Route path="/wallet" element={<Wallet />} />
+        <Route path="/milestone" element={<Milestone />} />
+        <Route path="/milestone-history" element={<Milestonpaymenthistory />} />
+        <Route path="/milestone-details" element={<Milestonedetails />} />
       </Routes>
     </Router>
   );
