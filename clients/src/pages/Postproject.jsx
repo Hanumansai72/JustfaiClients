@@ -69,6 +69,10 @@ const Postproject = () => {
     const [currentStep, setCurrentStep] = useState(0);
     const [agreed, setAgreed] = useState(false);
     const [launched, setLaunched] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+    const [projectId, setProjectId] = useState(null);
 
     /* Step 1 & 2 state */
     const [title, setTitle] = useState('Next-Gen AI Interface Design');
@@ -104,7 +108,94 @@ const Postproject = () => {
     const getState = (i) => i < currentStep ? 'complete' : i === currentStep ? 'active' : 'inactive';
 
     /* ── Launch handler ── */
-    const handleLaunch = () => setLaunched(true);
+    const handleLaunch = async () => {
+        setLoading(true);
+        setError('');
+        setSuccess('');
+
+        // Validate required fields
+        if (!title.trim()) {
+            setError('Project title is required');
+            setLoading(false);
+            return;
+        }
+        if (!description.trim()) {
+            setError('Project description is required');
+            setLoading(false);
+            return;
+        }
+        if (milestones.length === 0) {
+            setError('At least one milestone is required');
+            setLoading(false);
+            return;
+        }
+        if (!agreed) {
+            setError('You must agree to the Smart Contract Terms');
+            setLoading(false);
+            return;
+        }
+
+        try {
+            // Step 1: Create Project
+            const projectResponse = await fetch('https://justfaibackend.vercel.app/api/postproject', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                },
+                body: JSON.stringify({
+                    title,
+                    category,
+                    description,
+                    scope: 'Full Project Scope',
+                    budget: milestoneTotal,
+                }),
+            });
+
+            const projectData = await projectResponse.json();
+
+            if (projectResponse.status !== 201) {
+                throw new Error(projectData.message || 'Failed to create project');
+            }
+
+            const newProjectId = projectData.project._id;
+            setProjectId(newProjectId);
+            console.log('Project created:', projectData);
+
+            // Step 2: Add Milestones
+            for (const milestone of milestones) {
+                const milestoneResponse = await fetch(`https://justfaibackend.vercel.app/api/addmilestone/${newProjectId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                    },
+                    body: JSON.stringify({
+                        title: milestone.title,
+                        description: `Milestone: ${milestone.title}`,
+                        amount: parseFloat(milestone.amount),
+                        dueDate: milestone.dueDate,
+                    }),
+                });
+
+                const milestoneData = await milestoneResponse.json();
+
+                if (milestoneResponse.status !== 201) {
+                    throw new Error(milestoneData.message || 'Failed to add milestone');
+                }
+
+                console.log('Milestone added:', milestoneData);
+            }
+
+            setSuccess('Project launched successfully!');
+            setLaunched(true);
+        } catch (error) {
+            console.error('Project launch error:', error);
+            setError(error.message || 'An error occurred while launching the project');
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <>
@@ -365,6 +456,18 @@ const Postproject = () => {
                         {/* ════════ STEP 4: Review & Launch ════════ */}
                         {currentStep === 3 && (
                             <>
+                                {error && (
+                                    <div className="alert alert-danger mb-3" role="alert">
+                                        {error}
+                                    </div>
+                                )}
+
+                                {success && (
+                                    <div className="alert alert-success mb-3" role="alert">
+                                        {success}
+                                    </div>
+                                )}
+
                                 <div className="rl-grid">
 
                                     {/* ── Project Details ── */}
@@ -444,8 +547,8 @@ const Postproject = () => {
                                                 <span>${fmt(grandTotal)}</span>
                                             </div>
                                         </div>
-                                        <button className="rl-launch-btn" onClick={handleLaunch}>
-                                            Sign &amp; Launch Project
+                                        <button className="rl-launch-btn" onClick={handleLaunch} disabled={loading}>
+                                            {loading ? 'Launching...' : 'Sign & Launch Project'}
                                             <span className="material-symbols-outlined">rocket_launch</span>
                                         </button>
                                         <p className="rl-launch-disclaimer">

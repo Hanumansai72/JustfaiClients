@@ -5,10 +5,65 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
-  const handleSignIn = (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
-    console.log('Sign in with:', { email, password, rememberMe });
+    setLoading(true);
+    setError('');
+    setSuccess('');
+
+    // Client-side validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError('Invalid email');
+      setLoading(false);
+      return;
+    }
+
+    if (!password.trim()) {
+      setError('Password required');
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch('https://justfaibackend.vercel.app/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.status === 200) {
+        setSuccess(data.message);
+        const token = data.token;
+        localStorage.setItem('token', token);
+        if (rememberMe) {
+          localStorage.setItem('rememberMe', 'true');
+          localStorage.setItem('email', email);
+        }
+        console.log('Login successful:', data);
+        // Optionally redirect to dashboard
+        // window.location.href = '/dashboard';
+      } else if (response.status === 404) {
+        setError(data.message || 'Client not found');
+      } else if (response.status === 400) {
+        setError(data.message || 'Invalid credentials');
+      } else {
+        setError(data.message || 'Login failed');
+      }
+    } catch (error) {
+      console.error('Client login error:', error);
+      setError(error.message || 'An error occurred during login');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -81,6 +136,18 @@ const Login = () => {
                 <p className="text-secondary-custom mb-0">Sign in to your AI-powered portal</p>
               </div>
 
+              {error && (
+                <div className="alert alert-danger mb-3" role="alert">
+                  {error}
+                </div>
+              )}
+
+              {success && (
+                <div className="alert alert-success mb-3" role="alert">
+                  {success}
+                </div>
+              )}
+
               <form onSubmit={handleSignIn}>
                 {/* Email Input */}
                 <div className="mb-4">
@@ -126,9 +193,9 @@ const Login = () => {
                 </div>
 
                 {/* Sign In Button */}
-                <button className="btn btn-primary-custom d-flex align-items-center justify-content-center gap-2" type="submit">
+                <button className="btn btn-primary-custom d-flex align-items-center justify-content-center gap-2" type="submit" disabled={loading}>
                   <span className="material-icons" style={{ fontSize: '0.875rem' }}>login</span>
-                  Sign In
+                  {loading ? 'Signing in...' : 'Sign In'}
                 </button>
 
                 {/* Divider */}

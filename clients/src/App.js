@@ -13,6 +13,8 @@ import Wallet from "./pages/Wallet";
 import Milestone from "./pages/Milestone";
 import Milestonpaymenthistory from "./pages/Milestonpaymenthistory";
 import Milestonedetails from "./pages/Milestonedetails";
+import Allprojects from "./pages/Allprojects";
+import Projectdetails from "./pages/projectdetails";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
         <Route path="/milestone" element={<Milestone />} />
         <Route path="/milestone-history" element={<Milestonpaymenthistory />} />
         <Route path="/milestone-details" element={<Milestonedetails />} />
+        <Route path="/all-projects" element={<Allprojects />} />
+        <Route path="/project-details/:projectId" element={<Projectdetails />} />
       </Routes>
     </Router>
   );

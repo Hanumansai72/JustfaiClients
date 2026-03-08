@@ -1,14 +1,69 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Signup.css';
 
 const Signup = () => {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
 
-    const handleSignup = (e) => {
+    const handleSignup = async (e) => {
         e.preventDefault();
-        console.log('Signup with:', { fullName, email, password });
+        setLoading(true);
+        setError('');
+        setSuccess('');
+
+        if (!fullName.trim()) {
+            setError('Full name required');
+            setLoading(false);
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setError('Invalid email');
+            setLoading(false);
+            return;
+        }
+
+        if (password.length < 8) {
+            setError('Password too short');
+            setLoading(false);
+            return;
+        }
+
+        try {
+            const response = await fetch('https://justfaibackend.vercel.app/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ fullName, email, password }),
+            });
+
+            const data = await response.json();
+
+            if (response.status === 201) {
+                setSuccess(data.message);
+                const token = data.token;
+                localStorage.setItem('token', token);
+                console.log('Client registered successfully:', data);
+                setFullName('');
+                setEmail('');
+                setPassword('');
+            } else if (response.status === 400) {
+                setError(data.message);
+            } else {
+                setError(data.message || 'Registration failed');
+            }
+        } catch (error) {
+            console.error('Client registration error:', error);
+            setError(error.message || 'An error occurred during registration');
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -54,6 +109,18 @@ const Signup = () => {
                                 <h2 className="h4 fw-bold text-white mb-2">Create your Client Account</h2>
                                 <p className="text-secondary small">Hire top-tier freelance talent with AI-powered security.</p>
                             </header>
+
+                            {error && (
+                                <div className="alert alert-danger mb-3" role="alert">
+                                    {error}
+                                </div>
+                            )}
+
+                            {success && (
+                                <div className="alert alert-success mb-3" role="alert">
+                                    {success}
+                                </div>
+                            )}
 
                             <form className="d-flex flex-column gap-3" onSubmit={handleSignup}>
                                 <div className="input-group-custom">
@@ -113,8 +180,8 @@ const Signup = () => {
                                     </div>
                                 </div>
 
-                                <button type="submit" className="btn-primary-signup mt-2 group">
-                                    Create Secure Account
+                                <button type="submit" className="btn-primary-signup mt-2 group" disabled={loading}>
+                                    {loading ? 'Creating Account...' : 'Create Secure Account'}
                                     <span className="material-icons fs-6">arrow_forward</span>
                                 </button>
                             </form>
