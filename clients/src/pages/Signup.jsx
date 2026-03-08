@@ -35,7 +35,7 @@ const Signup = () => {
         }
 
         try {
-            const response = await fetch('https://justfaibackend.vercel.app/api/register', {
+            const response = await fetch('https://justfaibackend.vercel.app/api/clients/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
