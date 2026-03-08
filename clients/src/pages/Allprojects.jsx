@@ -15,7 +15,7 @@ const Allprojects = () => {
         const fetchProjects = async () => {
             try {
                 setLoading(true);
-                const response = await fetch('https://justfaibackend.vercel.app/api/getprojects', {
+                const response = await fetch('https://justfaibackend.vercel.app/api/clients/getprojects', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',

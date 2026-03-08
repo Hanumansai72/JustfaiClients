@@ -30,7 +30,7 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch('https://justfaibackend.vercel.app/api/login', {
+      const response = await fetch('https://justfaibackend.vercel.app/api/clients/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

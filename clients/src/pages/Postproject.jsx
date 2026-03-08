@@ -138,7 +138,7 @@ const Postproject = () => {
 
         try {
             // Step 1: Create Project
-            const projectResponse = await fetch('https://justfaibackend.vercel.app/api/postproject', {
+            const projectResponse = await fetch('https://justfaibackend.vercel.app/api/clients/postproject', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -165,7 +165,7 @@ const Postproject = () => {
 
             // Step 2: Add Milestones
             for (const milestone of milestones) {
-                const milestoneResponse = await fetch(`https://justfaibackend.vercel.app/api/addmilestone/${newProjectId}`, {
+                const milestoneResponse = await fetch(`https://justfaibackend.vercel.app/api/clients/addmilestone/${newProjectId}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
