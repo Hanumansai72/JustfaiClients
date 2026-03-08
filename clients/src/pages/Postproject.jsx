@@ -72,7 +72,7 @@ const Postproject = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
-    const [projectId, setProjectId] = useState(null);
+    const [, setProjectId] = useState(null);
 
     /* Step 1 & 2 state */
     const [title, setTitle] = useState('Next-Gen AI Interface Design');
@@ -117,6 +117,7 @@ const Postproject = () => {
         if (!title.trim()) {
             setError('Project title is required');
             setLoading(false);
+
             return;
         }
         if (!description.trim()) {
@@ -225,6 +226,7 @@ const Postproject = () => {
 
                 {/* ── Main ── */}
                 <main className="pp-main">
+
                     <div className="pp-content" style={{ maxWidth: currentStep === 3 ? '80rem' : '64rem' }}>
 
                         {/* Breadcrumb (step 4 only) */}

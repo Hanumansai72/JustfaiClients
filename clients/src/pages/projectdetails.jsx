@@ -150,7 +150,7 @@ const Projectdetails = () => {
                         <a href="/dashboard">Dashboard</a>
                         <a href="/all-projects" className="active">Projects</a>
                         <a href="/workspace">Messages</a>
-                        <a href="#">Settings</a>
+                        <a href="/settings">Settings</a>
                     </nav>
                 </div>
                 <div className="pd-navbar-actions">

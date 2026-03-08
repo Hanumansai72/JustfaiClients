@@ -126,7 +126,7 @@ const Allprojects = () => {
                         <span className="material-symbols-outlined">group</span>
                         <span>Freelancers</span>
                     </a>
-                    <a href="#" className="sidebar-nav-item">
+                    <a href="/" className="sidebar-nav-item">
                         <span className="material-symbols-outlined">bar_chart</span>
                         <span>Reports</span>
                     </a>
