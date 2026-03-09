@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
@@ -49,8 +51,7 @@ const Login = () => {
           localStorage.setItem('email', email);
         }
         console.log('Login successful:', data);
-        // Optionally redirect to dashboard
-        // window.location.href = '/dashboard';
+        navigate('/dashboard');
       } else if (response.status === 404) {
         setError(data.message || 'Client not found');
       } else if (response.status === 400) {

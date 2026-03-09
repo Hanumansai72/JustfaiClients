@@ -88,7 +88,7 @@ const Projectdetails = () => {
     };
 
     const getTotalBudget = () => {
-        if (!project?.milestones || project.milestones.length === 0) return project?.budget || 0;
+        if (!project?.milestones || project.milestones.length === 0) return project?.budget?.total || project?.budget || 0;
         return project.milestones.reduce((sum, m) => sum + (m.amount || 0), 0);
     };
 

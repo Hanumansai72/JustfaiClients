@@ -149,7 +149,7 @@ const Postproject = () => {
                     category,
                     description,
                     scope: 'Full Project Scope',
-                    budget: milestoneTotal,
+                    budget: { total: milestoneTotal },
                 }),
             });
 
