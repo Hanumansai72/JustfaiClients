@@ -151,9 +151,13 @@ const Postproject = () => {
                     scope: 'Full Project Scope',
                     budget: { total: milestoneTotal },
                 }),
+                credentials: 'include',
+
             });
 
             const projectData = await projectResponse.json();
+            console.log("PROJECT API STATUS:", projectResponse.status);
+            console.log("PROJECT API RESPONSE:", projectData);
 
             if (projectResponse.status !== 201) {
                 throw new Error(projectData.message || 'Failed to create project');
